@@ -84,9 +84,30 @@ pub fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     result
 }
 
+// 190. https://leetcode.com/problems/reverse-bits/
+// Basically cheating
+pub fn reverse_bits(x: u32) -> u32 {
+    x.reverse_bits()
+}
+
+// 191. https://leetcode.com/problems/number-of-1-bits/
+// Basically cheating
+pub fn hamming_weight(n: u32) -> i32 {
+    n.count_ones() as i32
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn l_190_works() {
+        let mut result = reverse_bits(43261596);
+        assert_eq!(result, 964176192);
+
+        result = reverse_bits(4294967293);
+        assert_eq!(result, 3221225471);
+    }
 
     #[test]
     fn l_1332_works() {
